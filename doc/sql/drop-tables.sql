@@ -1,0 +1,1 @@
+DROP TABLE utx_db.items;
