@@ -1,4 +1,7 @@
-package edu.masanz;
+package edu.masanz.dao;
+
+import edu.masanz.db.DbCon;
+import edu.masanz.dto.Item;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

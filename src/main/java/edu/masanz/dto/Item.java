@@ -1,4 +1,4 @@
-package edu.masanz;
+package edu.masanz.dto;
 
 import java.util.ArrayList;
 import java.util.List;

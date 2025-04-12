@@ -1,7 +1,8 @@
-package edu.masanz;
+package edu.masanz.menus;
 
 
 import edu.masanz.dto.Item;
+import edu.masanz.service.AuctionService;
 
 import java.util.Scanner;
 
@@ -80,7 +81,7 @@ public class Menu {
         System.out.println(s);
         System.out.println("=".repeat(s.length()));
         System.out.println();
-        for (Item item : Service.getAllItems()) {
+        for (Item item : AuctionService.getAllItems()) {
             System.out.println(item);
         }
     }
@@ -88,7 +89,7 @@ public class Menu {
     private void showItem() {
         long idItem = pedirIdItem("Ingrese el id del item a buscar: ");
         System.out.println();
-        Item item = Service.getItemById(idItem);
+        Item item = AuctionService.getItemById(idItem);
         if (item != null) {
             System.out.println("Item encontrado:");
             System.out.println(item);
@@ -100,7 +101,7 @@ public class Menu {
     private void createItem() {
         Item item = pedirItem("Ingrese el item a crear: ", false);
         if (item != null) {
-            long id = Service.createItem(item);
+            long id = AuctionService.createItem(item);
             item.setId(id);
             System.out.println("Item creado: " + item);
         } else {
@@ -110,7 +111,7 @@ public class Menu {
 
     private void updateItem() {
         Item item = pedirItem("Ingrese el item a modificar: ", true);
-        if (item != null && Service.updateItem(item)) {
+        if (item != null && AuctionService.updateItem(item)) {
             System.out.printf("Item %d actualizado", item.getId());
         } else {
             System.out.println("No se pudo actualizar el item.");
@@ -119,7 +120,7 @@ public class Menu {
 
     private void deleteItem() {
         long idItem = pedirIdItem("Ingrese el id del item a eliminar: ");
-        if (Service.deleteItem(idItem)) {
+        if (AuctionService.deleteItem(idItem)) {
             System.out.printf("Item %d eliminado", idItem);
         } else {
             System.out.println("No se pudo eliminar el item.");
@@ -148,11 +149,11 @@ public class Menu {
         System.out.println(msg);
         if (itemExists) {
             id = pedirIdItem("Id del item: ");
-            if (!Service.existsItem(id)) {
+            if (!AuctionService.existsItem(id)) {
                 System.out.println("No se encontró el item con id " + id);
                 return null;
             }
-            Item item = Service.getItemById(id);
+            Item item = AuctionService.getItemById(id);
             if (item != null) {
                 nombre = item.getNombre();
                 desc = item.getDesc();
@@ -188,7 +189,7 @@ public class Menu {
     }
 
     private void exit() {
-        Service.endService();
+        AuctionService.endService();
     }
 
 }

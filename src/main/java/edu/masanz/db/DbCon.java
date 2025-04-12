@@ -1,4 +1,4 @@
-package edu.masanz;
+package edu.masanz.db;
 
 import java.sql.*;
 

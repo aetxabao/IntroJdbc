@@ -1,4 +1,6 @@
-package edu.masanz;
+package edu.masanz.terminal;
+
+import edu.masanz.menus.Menu;
 
 public class Main {
 

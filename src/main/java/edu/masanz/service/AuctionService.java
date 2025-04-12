@@ -5,9 +5,19 @@ import edu.masanz.dto.Item;
 
 import java.util.List;
 
-public class Service {
+public class AuctionService {
 
     private static Dao dao = new Dao();
+
+    public static boolean authenticate(String username, String password) {
+        // TODO: authenticate
+        return !(username == null || password == null || username.length() == 0 || password.length() == 0);
+    }
+
+    public static boolean isAdministrator(String username) {
+        // TODO: isAdministrator
+        return false;
+    }
 
     public static List<Item> getAllItems() {
         return dao.getAllItems();
