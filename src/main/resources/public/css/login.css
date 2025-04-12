@@ -1,0 +1,19 @@
+body {
+    /* background-image: url("../imgs/bgs/puja.webp"); */
+    background-image: url("../imgs/bgs/gente.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+@media screen and (min-width: 600px) and (min-height: 800px) {
+    .main-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        -ms-transform: translate(-50%, -70%); /* IE 9 */
+        -webkit-transform: translate(-50%, -70%); /* Chrome, Safari, Opera */	    
+    }
+}

@@ -1,6 +1,8 @@
 package edu.masanz;
 
 
+import edu.masanz.dto.Item;
+
 import java.util.Scanner;
 
 public class Menu {

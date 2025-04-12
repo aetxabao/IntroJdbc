@@ -1,4 +1,7 @@
-package edu.masanz;
+package edu.masanz.service;
+
+import edu.masanz.dao.Dao;
+import edu.masanz.dto.Item;
 
 import java.util.List;
 
