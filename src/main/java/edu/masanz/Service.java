@@ -1,6 +1,5 @@
 package edu.masanz;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Service {
@@ -8,36 +7,41 @@ public class Service {
     private static Dao dao = new Dao();
 
     public static List<Item> getAllItems() {
-        // TODO: getAllItems
-        return new ArrayList<>();
+        return dao.getAllItems();
     }
 
     public static Item getItemById(long idItem) {
-        // TODO: getItemById
-        return new Item();
+        return dao.getItemById(idItem);
     }
     public static boolean existsItem(long idItem) {
-        // TODO: existsItem
-        return false;
+        return dao.existsItem(idItem);
     }
 
     public static long createItem(Item item) {
-        // TODO: createItem
-        return 0L;
+        if (item != null) {
+            return dao.addItem(item);
+        }
+        return 0;
     }
 
     public static boolean updateItem(Item item) {
-        // TODO: updateItem
+        if (item != null) {
+            dao.updateItem(item);
+            return true;
+        }
         return false;
     }
 
     public static boolean deleteItem(long idItem) {
-        // TODO: deleteItem
+        if (existsItem(idItem)) {
+            dao.deleteItem(idItem);
+            return true;
+        }
         return false;
     }
 
     public static void endService() {
-        // TODO: endService
+        dao.cerrarConexion();
     }
 
 }
